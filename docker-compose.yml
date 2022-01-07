@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+    db:
+        container_name: mssql-2019
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        ports:
+            - 1433:1433
+        restart: always
+        volumes: 
+            - mssql-2019-data:/var/opt/mssql
+        environment:
+            SA_PASSWORD: "Ti6collegato!"
+            ACCEPT_EULA: "Y"
+volumes:
+    mssql-2019-data:
